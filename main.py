@@ -16,7 +16,18 @@ BlackboxViewer - macOS 용 4채널 블랙박스 영상 뷰어 / 채널 추출기
     brew install ffmpeg   # 아직 설치 안 했다면
     python3 main.py
 """
+import os
 import sys
+
+# PyInstaller로 빌드되어 실행 중인지 확인 (.app 내부 환경)
+if getattr(sys, 'frozen', False):
+    # 빌드된 앱 내부의 임시 압축 해제 경로 (MEIPASS)를 가져옵니다.
+    base_path = sys._MEIPASS
+
+    # 시스템 환경변수(PATH) 맨 앞에 이 경로를 추가하여 ffprobe를 찾을 수 있게 합니다.
+    if base_path not in os.environ["PATH"]:
+        os.environ["PATH"] = base_path + os.pathsep + os.environ["PATH"]
+
 from pathlib import Path
 from typing import Dict, List, Optional
 
