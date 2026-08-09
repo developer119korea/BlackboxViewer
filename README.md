@@ -1,6 +1,7 @@
 # BlackboxViewer
 
 macOS 용 4채널 블랙박스 영상(.avi) 뷰어 겸 채널 추출기.
+<img width="1312" height="940" alt="스크린샷 2026-08-09 오후 3 39 21" src="https://github.com/user-attachments/assets/1bad85e9-95ec-474c-bc64-dbd396c892bf" />
 
 ## 기능
 
